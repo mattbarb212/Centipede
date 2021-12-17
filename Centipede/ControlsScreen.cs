@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace Centipede
 {
-    public partial class Centipede : Form
+    public partial class ControlsScreen : UserControl
     {
-        public Centipede()
+        public ControlsScreen()
         {
             InitializeComponent();
         }
 
-        private void Centipede_Load(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
             MenuScreen ms = new MenuScreen();
-           
-            this.Controls.Add(ms);
+            Form form = this.FindForm();
+
+            form.Controls.Add(ms);
+            form.Controls.Remove(this);
 
             ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
         }
