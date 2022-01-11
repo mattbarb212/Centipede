@@ -73,6 +73,16 @@ namespace Centipede.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Centipede_Player {
+            get {
+                object obj = ResourceManager.GetObject("Centipede_Player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap CentipedeMenuImage {
             get {
                 object obj = ResourceManager.GetObject("CentipedeMenuImage", resourceCulture);
