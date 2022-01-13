@@ -130,5 +130,11 @@
   <ItemGroup>
     <None Include="Resources\Centipede_Player.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Centipede_Mushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Centipede_flea.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
