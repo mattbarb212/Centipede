@@ -17,7 +17,7 @@ namespace Centipede
     public partial class GameScreen : UserControl
     {
         #region Global Variables
-        Rectangle player = new Rectangle(250, 420, 15, 20);
+        Rectangle playerRec = new Rectangle(250, 420, 15, 20);
 
         Image playerImage = Properties.Resources.Centipede_Player;
         Image mushroomImage = Properties.Resources.Centipede_Mushroom;
@@ -276,7 +276,7 @@ namespace Centipede
             #region Paint Method
             //Draw player
 
-            e.Graphics.DrawImage(playerImage, player);
+            e.Graphics.DrawImage(playerImage, playerRec);
 
             //Draw bullets
 
@@ -306,14 +306,14 @@ namespace Centipede
             #region Player Movement
             //Move the player laft and right while checking the boundaries
 
-            if (aDown == true && player.X > 0)
+            if (aDown == true && playerRec.X > 0)
             {
-                player.X -= pSpeed;
+                playerRec.X -= pSpeed;
             }
 
-            if (dDown == true && player.X < 500 - player.Width)
+            if (dDown == true && playerRec.X < 500 - playerRec.Width)
             {
-                player.X += pSpeed;
+                playerRec.X += pSpeed;
             }
             #endregion
 
@@ -323,8 +323,8 @@ namespace Centipede
 
             if (spaceDown == true && fireCounter > 10)
             {
-                bulletXList.Add(player.X + player.Width / 2);
-                bulletYList.Add(player.Y);
+                bulletXList.Add(playerRec.X + playerRec.Width / 2);
+                bulletYList.Add(playerRec.Y);
                 fireCounter = 0;
             }
 
@@ -342,7 +342,7 @@ namespace Centipede
 
             #endregion
 
-            #region Collision
+            #region Bullet Collision
 
             for (int i = 0; i < mushroomXList.Count(); i++)
             {
@@ -428,6 +428,23 @@ namespace Centipede
                     break;
                 }
             }
+
+            #endregion
+
+            #region Win/Loss
+
+            for (int i = 0; i < enemyYList.Count(); i++)
+            {
+                Rectangle enemyRec = new Rectangle(enemyXList[i], enemyYList[i], enemySize, enemySize);
+
+                if (enemyRec.IntersectsWith(playerRec))
+                {
+                    gameTimer.Enabled = false;
+
+                    
+                }
+            }
+
 
             #endregion
 
