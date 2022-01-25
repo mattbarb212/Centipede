@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.IO;
 
 namespace Centipede
 {
@@ -31,6 +33,7 @@ namespace Centipede
         int fireCounter = 0;
         int mushroomSize = 15;
         int enemySize = 20;
+        int score = 0;
 
         Random randGen = new Random();
 
@@ -46,8 +49,10 @@ namespace Centipede
         List<int> enemyXList = new List<int>();
         List<int> enemyYList = new List<int>();
         List<int> enemySpeedList = new List<int>();
+       
 
         #endregion
+
         public GameScreen()
         {
             InitializeComponent();
@@ -59,152 +64,152 @@ namespace Centipede
             #region Random Map Generator
 
             mushroomXList.Add(randGen.Next(25, 481));
-            int tempNum = randGen.Next(1, 16) * 20;
+            int tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 15) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
             mushroomXList.Add(randGen.Next(25, 481));
-            tempNum = randGen.Next(1, 16) * 20;
+            tempNum = randGen.Next(1, 20) * 20;
             mushroomYList.Add(tempNum);
             mushroomHealthList.Add(3);
 
@@ -213,26 +218,27 @@ namespace Centipede
             #region Enemy Generator
             enemyXList.Add(240);
             enemyYList.Add(0);
-            enemySpeedList.Add(4);
+            enemySpeedList.Add(40);
 
             enemyXList.Add(220);
             enemyYList.Add(0);
-            enemySpeedList.Add(4);
+            enemySpeedList.Add(40);
 
             enemyXList.Add(200);
             enemyYList.Add(0);
-            enemySpeedList.Add(4);
+            enemySpeedList.Add(40);
 
             enemyXList.Add(180);
             enemyYList.Add(0);
-            enemySpeedList.Add(4);
+            enemySpeedList.Add(40);
 
             enemyXList.Add(160);
             enemyYList.Add(0);
-            enemySpeedList.Add(4);
+            enemySpeedList.Add(40);
             #endregion
         }
 
+        #region KeyDown
         private void GameScreen_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -249,7 +255,9 @@ namespace Centipede
 
             }
         }
+        #endregion
 
+        #region KeyUp
         private void GameScreen_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -265,6 +273,7 @@ namespace Centipede
                     break;
             }
         }
+        #endregion
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
@@ -303,6 +312,8 @@ namespace Centipede
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            scoreOutput.Text = score.ToString("0000");
+
             #region Player Movement
             //Move the player laft and right while checking the boundaries
 
@@ -352,11 +363,13 @@ namespace Centipede
 
                     Rectangle bulletRec = new Rectangle(bulletXList[t], bulletYList[t], bulletSize, bulletSize);
                     Rectangle mushroomRec = new Rectangle(mushroomXList[i], mushroomYList[i], mushroomSize, mushroomSize);
-                    
+
                     //Bullet collision with mushrooms
 
                     if (bulletRec.IntersectsWith(mushroomRec))
                     {
+                        score += 5;
+
                         mushroomHealthList[i]--;
 
                         bulletXList.RemoveAt(t);
@@ -371,7 +384,7 @@ namespace Centipede
                         collision = true;
                         break;
                     }
-                 
+
                 }
                 if (collision)
                 {
@@ -385,20 +398,25 @@ namespace Centipede
                 bool collision = false;
                 for (int t = 0; t < bulletXList.Count(); t++)
                 {
-                    
-                        Rectangle enemyRec = new Rectangle(enemyXList[s], enemyYList[s], enemySize, enemySize);
-                        Rectangle bulletRec = new Rectangle(bulletXList[t], bulletYList[t], bulletSize, bulletSize);
 
-                        if (bulletRec.IntersectsWith(enemyRec))
-                        {
-                            enemyXList.RemoveAt(s);
-                            enemyYList.RemoveAt(s);
-                            enemySpeedList.RemoveAt(s);
+                    Rectangle enemyRec = new Rectangle(enemyXList[s], enemyYList[s], enemySize, enemySize);
+                    Rectangle bulletRec = new Rectangle(bulletXList[t], bulletYList[t], bulletSize, bulletSize);
+
+                    if (bulletRec.IntersectsWith(enemyRec))
+                    {
+                        score += 10;
+
+                        bulletXList.RemoveAt(t);
+                        bulletYList.RemoveAt(t);
+
+                        enemyXList.RemoveAt(s);
+                        enemyYList.RemoveAt(s);
+                        enemySpeedList.RemoveAt(s);
 
                         collision = true;
                         break;
-                        }
-                    
+                    }
+
                 }
                 if (collision)
                 {
@@ -423,28 +441,11 @@ namespace Centipede
                         break;
                     }
                 }
-                if(collision)
+                if (collision)
                 {
                     break;
                 }
             }
-
-            #endregion
-
-            #region Win/Loss
-
-            for (int i = 0; i < enemyYList.Count(); i++)
-            {
-                Rectangle enemyRec = new Rectangle(enemyXList[i], enemyYList[i], enemySize, enemySize);
-
-                if (enemyRec.IntersectsWith(playerRec))
-                {
-                    gameTimer.Enabled = false;
-
-                    
-                }
-            }
-
 
             #endregion
 
@@ -469,6 +470,41 @@ namespace Centipede
                 }
             }
             #endregion
+
+            #region Win/Loss
+
+            for (int i = 0; i < enemyYList.Count(); i++)
+            {
+                Rectangle enemyRec = new Rectangle(enemyXList[i], enemyYList[i], enemySize, enemySize);
+
+                if (enemyRec.IntersectsWith(playerRec))
+                {
+                    gameTimer.Enabled = false;
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Size = this.Size;
+                    pictureBox.BackgroundImage = Properties.Resources.GameoverImage;
+                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                    this.Controls.Add(pictureBox);
+
+                    Refresh();
+                    Thread.Sleep(3000);
+
+                    MenuScreen ms = new MenuScreen();
+                    Form form = this.FindForm();
+
+                    form.Controls.Add(ms);
+                    form.Controls.Remove(this);
+
+                    ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
+                }
+            }
+
+            #endregion
+
+            List<string> tempList = new List<string>();
+
+            
 
             Refresh();
         }

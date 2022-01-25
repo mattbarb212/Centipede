@@ -32,6 +32,7 @@ namespace Centipede
             this.PlayButton = new System.Windows.Forms.Button();
             this.controlsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.highscoreButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PlayButton
@@ -61,7 +62,7 @@ namespace Centipede
             this.controlsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlsButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlsButton.ForeColor = System.Drawing.Color.White;
-            this.controlsButton.Location = new System.Drawing.Point(292, 191);
+            this.controlsButton.Location = new System.Drawing.Point(292, 182);
             this.controlsButton.Name = "controlsButton";
             this.controlsButton.Size = new System.Drawing.Size(132, 38);
             this.controlsButton.TabIndex = 1;
@@ -78,13 +79,29 @@ namespace Centipede
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(292, 273);
+            this.exitButton.Location = new System.Drawing.Point(292, 335);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(132, 38);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // highscoreButton
+            // 
+            this.highscoreButton.BackColor = System.Drawing.Color.Black;
+            this.highscoreButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.highscoreButton.FlatAppearance.BorderSize = 5;
+            this.highscoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.highscoreButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highscoreButton.ForeColor = System.Drawing.Color.White;
+            this.highscoreButton.Location = new System.Drawing.Point(292, 258);
+            this.highscoreButton.Name = "highscoreButton";
+            this.highscoreButton.Size = new System.Drawing.Size(132, 38);
+            this.highscoreButton.TabIndex = 3;
+            this.highscoreButton.Text = "Highscores";
+            this.highscoreButton.UseVisualStyleBackColor = false;
             // 
             // MenuScreen
             // 
@@ -93,6 +110,7 @@ namespace Centipede
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = global::Centipede.Properties.Resources.CentipedeMenuImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.highscoreButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.controlsButton);
             this.Controls.Add(this.PlayButton);
@@ -107,5 +125,6 @@ namespace Centipede
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button controlsButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button highscoreButton;
     }
 }
