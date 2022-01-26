@@ -33,7 +33,7 @@ namespace Centipede
         int fireCounter = 0;
         int mushroomSize = 15;
         int enemySize = 20;
-        int score = 0;
+        public static int score = 0;
 
         Random randGen = new Random();
 
@@ -218,23 +218,23 @@ namespace Centipede
             #region Enemy Generator
             enemyXList.Add(240);
             enemyYList.Add(0);
-            enemySpeedList.Add(40);
+            enemySpeedList.Add(4);
 
             enemyXList.Add(220);
             enemyYList.Add(0);
-            enemySpeedList.Add(40);
+            enemySpeedList.Add(4);
 
             enemyXList.Add(200);
             enemyYList.Add(0);
-            enemySpeedList.Add(40);
+            enemySpeedList.Add(4);
 
             enemyXList.Add(180);
             enemyYList.Add(0);
-            enemySpeedList.Add(40);
+            enemySpeedList.Add(4);
 
             enemyXList.Add(160);
             enemyYList.Add(0);
-            enemySpeedList.Add(40);
+            enemySpeedList.Add(4);
             #endregion
         }
 
@@ -490,21 +490,38 @@ namespace Centipede
                     Refresh();
                     Thread.Sleep(3000);
 
-                    MenuScreen ms = new MenuScreen();
+                    HighscoreSaveScreen hss = new HighscoreSaveScreen();
                     Form form = this.FindForm();
 
-                    form.Controls.Add(ms);
+                    form.Controls.Add(hss);
                     form.Controls.Remove(this);
 
-                    ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
+                    hss.Location = new Point((this.Width - hss.Width) / 2, (this.Height - hss.Height) / 2);
                 }
+
             }
+            if (enemyYList.Count == 0)
+            {
+                gameTimer.Enabled = false;
 
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Size = this.Size;
+                pictureBox.BackgroundImage = Properties.Resources.GameoverImage;
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                this.Controls.Add(pictureBox);
+
+                Refresh();
+                Thread.Sleep(3000);
+
+                HighscoreSaveScreen hss = new HighscoreSaveScreen();
+                Form form = this.FindForm();
+
+                form.Controls.Add(hss);
+                form.Controls.Remove(this);
+
+                hss.Location = new Point((this.Width - hss.Width) / 2, (this.Height - hss.Height) / 2);
+            }
             #endregion
-
-            List<string> tempList = new List<string>();
-
-            
 
             Refresh();
         }

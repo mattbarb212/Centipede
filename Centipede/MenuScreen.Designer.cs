@@ -41,7 +41,7 @@ namespace Centipede
             this.PlayButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.PlayButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.PlayButton.FlatAppearance.BorderSize = 5;
-            this.PlayButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PlayButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
             this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayButton.ForeColor = System.Drawing.Color.White;
@@ -52,13 +52,14 @@ namespace Centipede
             this.PlayButton.Text = "Play";
             this.PlayButton.UseVisualStyleBackColor = false;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            this.PlayButton.Enter += new System.EventHandler(this.PlayButton_Enter);
             // 
             // controlsButton
             // 
             this.controlsButton.BackColor = System.Drawing.Color.Black;
             this.controlsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.controlsButton.FlatAppearance.BorderSize = 5;
-            this.controlsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.controlsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
             this.controlsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlsButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controlsButton.ForeColor = System.Drawing.Color.White;
@@ -75,14 +76,14 @@ namespace Centipede
             this.exitButton.BackColor = System.Drawing.Color.Black;
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.exitButton.FlatAppearance.BorderSize = 5;
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Location = new System.Drawing.Point(292, 335);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(132, 38);
-            this.exitButton.TabIndex = 2;
+            this.exitButton.TabIndex = 3;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -92,16 +93,17 @@ namespace Centipede
             this.highscoreButton.BackColor = System.Drawing.Color.Black;
             this.highscoreButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.highscoreButton.FlatAppearance.BorderSize = 5;
-            this.highscoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.highscoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.highscoreButton.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highscoreButton.ForeColor = System.Drawing.Color.White;
             this.highscoreButton.Location = new System.Drawing.Point(292, 258);
             this.highscoreButton.Name = "highscoreButton";
             this.highscoreButton.Size = new System.Drawing.Size(132, 38);
-            this.highscoreButton.TabIndex = 3;
+            this.highscoreButton.TabIndex = 2;
             this.highscoreButton.Text = "Highscores";
             this.highscoreButton.UseVisualStyleBackColor = false;
+            this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
             // 
             // MenuScreen
             // 

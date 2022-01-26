@@ -67,6 +67,12 @@
       <DependentUpon>GameScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="HighScore.cs" />
+    <Compile Include="HighscoreSaveScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HighscoreSaveScreen.Designer.cs">
+      <DependentUpon>HighscoreSaveScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="HighscoreScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameScreen.resx">
       <DependentUpon>GameScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighscoreSaveScreen.resx">
+      <DependentUpon>HighscoreSaveScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HighscoreScreen.resx">
       <DependentUpon>HighscoreScreen.cs</DependentUpon>
@@ -148,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GameoverImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpArrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownArrow.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,17 +17,23 @@ namespace Centipede
             InitializeComponent();
         }
 
-        public void ShowScores()
+        private void HighscoreScreen_Load(object sender, EventArgs e)
         {
             foreach (HighScore hs in Centipede.scores)
             {
-                //outputLabel.Text = ...
+                outputLabel.Text += $"{hs.name} - {hs.score}\n";
             }
         }
 
-        private void HighscoreScreen_Load(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
+            MenuScreen ms = new MenuScreen();
+            Form form = this.FindForm();
 
+            form.Controls.Add(ms);
+            form.Controls.Remove(this);
+
+            ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
         }
     }
 }

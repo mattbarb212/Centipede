@@ -43,5 +43,22 @@ namespace Centipede
 
             gs.Location = new Point((this.Width - gs.Width) / 2, (this.Height - gs.Height) / 2);
         }
+
+        private void highscoreButton_Click(object sender, EventArgs e)
+        {
+            HighscoreScreen hs = new HighscoreScreen();
+            Form form = this.FindForm();
+
+            form.Controls.Add(hs);
+            form.Controls.Remove(this);
+
+            hs.Location = new Point((this.Width - hs.Width) / 2, (this.Height - hs.Height) / 2);
+        }
+
+        private void PlayButton_Enter(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Goldenrod;
+            controlsButton.BackColor = Color.Black;
+        }
     }
 }

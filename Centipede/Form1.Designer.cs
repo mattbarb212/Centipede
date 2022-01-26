@@ -43,6 +43,7 @@ namespace Centipede
             this.Name = "Centipede";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Centipede";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Centipede_FormClosed);
             this.Load += new System.EventHandler(this.Centipede_Load);
             this.ResumeLayout(false);
 
