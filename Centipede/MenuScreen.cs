@@ -16,7 +16,9 @@ namespace Centipede
         {
             InitializeComponent();
         }
+        #region Change Screens
 
+        //When buttons are pressed, Screen will change
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -54,11 +56,78 @@ namespace Centipede
 
             hs.Location = new Point((this.Width - hs.Width) / 2, (this.Height - hs.Height) / 2);
         }
+        #endregion
 
+        #region Mouse Hover
+
+        //Changes the colour of the buttons when hovering over
         private void PlayButton_Enter(object sender, EventArgs e)
         {
             PlayButton.BackColor = Color.Goldenrod;
             controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Black;
         }
+
+        private void controlsButton_Enter(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Goldenrod;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Black;
+        }
+
+        private void highscoreButton_Enter(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Goldenrod;
+            exitButton.BackColor = Color.Black;
+        }
+
+        private void exitButton_Enter(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Goldenrod;
+        }
+
+        private void PlayButton_MouseHover(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Goldenrod;
+            controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Black;
+            TabIndex = 0;
+        }
+
+        private void controlsButton_MouseHover(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Goldenrod;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Black;
+            TabIndex = 1;
+        }
+
+        private void highscoreButton_MouseHover(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Goldenrod;
+            exitButton.BackColor = Color.Black;
+            TabIndex = 2;
+        }
+
+        private void exitButton_MouseHover(object sender, EventArgs e)
+        {
+            PlayButton.BackColor = Color.Black;
+            controlsButton.BackColor = Color.Black;
+            highscoreButton.BackColor = Color.Black;
+            exitButton.BackColor = Color.Goldenrod;
+            TabIndex = 3;
+        }
+        #endregion
     }
 }

@@ -53,6 +53,7 @@ namespace Centipede
             this.PlayButton.UseVisualStyleBackColor = false;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             this.PlayButton.Enter += new System.EventHandler(this.PlayButton_Enter);
+            this.PlayButton.MouseHover += new System.EventHandler(this.PlayButton_MouseHover);
             // 
             // controlsButton
             // 
@@ -70,6 +71,8 @@ namespace Centipede
             this.controlsButton.Text = "Controls";
             this.controlsButton.UseVisualStyleBackColor = false;
             this.controlsButton.Click += new System.EventHandler(this.controlsButton_Click);
+            this.controlsButton.Enter += new System.EventHandler(this.controlsButton_Enter);
+            this.controlsButton.MouseHover += new System.EventHandler(this.controlsButton_MouseHover);
             // 
             // exitButton
             // 
@@ -87,6 +90,8 @@ namespace Centipede
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.Enter += new System.EventHandler(this.exitButton_Enter);
+            this.exitButton.MouseHover += new System.EventHandler(this.exitButton_MouseHover);
             // 
             // highscoreButton
             // 
@@ -104,6 +109,8 @@ namespace Centipede
             this.highscoreButton.Text = "Highscores";
             this.highscoreButton.UseVisualStyleBackColor = false;
             this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
+            this.highscoreButton.Enter += new System.EventHandler(this.highscoreButton_Enter);
+            this.highscoreButton.MouseHover += new System.EventHandler(this.highscoreButton_MouseHover);
             // 
             // MenuScreen
             // 
@@ -116,6 +123,7 @@ namespace Centipede
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.controlsButton);
             this.Controls.Add(this.PlayButton);
+            this.DoubleBuffered = true;
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(500, 450);
             this.ResumeLayout(false);

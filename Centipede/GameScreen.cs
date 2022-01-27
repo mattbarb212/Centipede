@@ -235,6 +235,26 @@ namespace Centipede
             enemyXList.Add(160);
             enemyYList.Add(0);
             enemySpeedList.Add(4);
+
+            enemyXList.Add(240);
+            enemyYList.Add(0);
+            enemySpeedList.Add(-4);
+
+            enemyXList.Add(220);
+            enemyYList.Add(0);
+            enemySpeedList.Add(-4);
+
+            enemyXList.Add(200);
+            enemyYList.Add(0);
+            enemySpeedList.Add(-4);
+
+            enemyXList.Add(180);
+            enemyYList.Add(0);
+            enemySpeedList.Add(-4);
+
+            enemyXList.Add(160);
+            enemyYList.Add(0);
+            enemySpeedList.Add(-4);
             #endregion
         }
 

@@ -438,11 +438,13 @@ namespace Centipede
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // Saves the Score and the name
             tempString = $"{letter1.Text}{letter2.Text}{letter3.Text}";
 
             HighScore hs = new HighScore(tempString, GameScreen.score);
             Centipede.scores.Add(hs);
 
+            //Changes back to the menu screen
             MenuScreen ms = new MenuScreen();
             Form form = this.FindForm();
 

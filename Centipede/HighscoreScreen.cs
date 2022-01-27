@@ -21,7 +21,7 @@ namespace Centipede
         {
             foreach (HighScore hs in Centipede.scores)
             {
-                outputLabel.Text += $"{hs.name} - {hs.score}\n";
+                outputLabel.Text += $"{hs.name} - {hs.score.ToString("0000")}\n";
             }
         }
 
